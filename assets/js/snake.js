@@ -50,10 +50,12 @@
 
 		this.writeMessage = function (message){
 			this.notice.innerHTML = message;
+			this.notice.style.display = "block"
 		};
 
 		this.clear = function(){
 			this.notice.innerHTML = "";
+			this.notice.style.display = "none";
 		};
 	};
 
@@ -276,7 +278,8 @@
 					for(let i = 0; i < snake.coordinates.length - 1; i++){
 						/* if snake runs into itself, stop interval, write error */
 						if(snake.coordinates[snake.coordinates.length - 1].x === snake.coordinates[i].x && snake.coordinates[snake.coordinates.length - 1].y === snake.coordinates[i].y){
-							message.writeMessage("conflict");
+							message.writeMessage("You ate yourself!");
+							
 							clearInterval(gameInterval);
 						}
 						/* if food lands on snake, replace it */
@@ -288,7 +291,7 @@
 					
 
 			}else{
-				message.writeMessage("loser!");
+				message.writeMessage("Out of bounds!");
 				clearInterval(gameInterval);
 
 			}
