@@ -79,7 +79,7 @@
 
 		this.direction = 39;
 		var ctx = ctx;
-		this.fillColor = "#000000";
+		this.fillColor = "#2ece1b";
 		var increment = increment;
 
 		this.move =  function(){
